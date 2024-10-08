@@ -5,7 +5,7 @@ services:
     image: workspace:v001  
 
     environment:
-      - AIRFLOW__CORE__FERNET_KEY=
+      - AIRFLOW__CORE__FERNET_KEY=tC0TBifHkMTk7UIuCv4fK9s5x3Ch9y93G4S-eO2IF5s=
       - AIRFLOW__CORE__LOAD_EXAMPLES=False         
       - JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 
 
