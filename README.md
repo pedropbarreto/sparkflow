@@ -143,7 +143,3 @@ services:
 3. **Commit** suas alterações (`git commit -am 'Adiciona nova feature'`).
 4. **Envie** para a branch principal (`git push origin feature/nova-feature`).
 5. Crie um novo **Pull Request**.
-
-## Licença
-
-Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
