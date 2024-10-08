@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  sleek-airflow:
+    image: workspace:v001  
+
+    environment:
+      - AIRFLOW__CORE__FERNET_KEY=tC0TBifHkMTk7UIuCv4fK9s5x3Ch9y93G4S-eO2IF5s=
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False         
+      - JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 
+
+    volumes:
+      - ./airflow:/opt/airflow  
+      - ./bronze:/bronze
+      - ./silver:/silver
+      - ./gold:/gold
+    ports:
+      - "8080:8080"  
+
+    command: /bin/bash -c "mkdir -p /bronze /silver /gold && airflow standalone"
