@@ -13,15 +13,21 @@ Certifique-se de que você tem as seguintes ferramentas instaladas:
 ## Estrutura do Projeto
 
 ```
-├── airflow                 # Diretório de configuração e execução do Airflow
-│   ├── dags                # DAGs do Airflow
-│   └── logs                # Logs do Airflow
-├── bronze                  # Diretório para armazenar dados da camada bronze
-├── silver                  # Diretório para armazenar dados da camada silver
-├── gold                    # Diretório para armazenar dados da camada gold
-├── Dockerfile              # Arquivo Dockerfile para configurar o ambiente
-├── docker-compose.yml      # Arquivo Docker Compose para subir os serviços
-└── README.md               # Documentação do projeto
+sparkflow                      # Diretório raiz do projeto
+├── airflow                    # Diretório de configuração e execução do Airflow
+│   ├── dags                   # Diretório contendo as DAGs do Airflow
+│   │   └── breweries           # Diretório específico para o pipeline de breweries
+│   │       ├── tasks           # Tarefas específicas da DAG
+│   │       ├── utils           # Funções utilitárias usadas na DAG
+│   │       └── dag             # Definições da DAG
+│   ├── logs                   # Diretório para armazenar logs do Airflow
+│   ├── bronze                 # Diretório para armazenar dados da camada bronze
+│   ├── silver                 # Diretório para armazenar dados da camada silver
+│   └── gold                   # Diretório para armazenar dados da camada gold
+├── docker                     # Diretório para arquivos relacionados ao Docker
+│   ├── Dockerfile             # Arquivo Dockerfile para configurar o ambiente
+│   └── docker-compose.yml     # Arquivo Docker Compose para subir os serviços
+└── README.md                  # Documentação do projeto
 ```
 
 ## Configuração do Ambiente
