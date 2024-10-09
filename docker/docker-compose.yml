@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  sleek-airflow:
-    image: workspace:v001  
+  project-airflow:
+    image: sparkflow:latest  
 
     environment:
       - AIRFLOW__CORE__FERNET_KEY=tC0TBifHkMTk7UIuCv4fK9s5x3Ch9y93G4S-eO2IF5s=
@@ -17,4 +17,4 @@ services:
     ports:
       - "8080:8080"  
 
-    command: /bin/bash -c "mkdir -p /bronze /silver /gold && airflow standalone"
+    command: "airflow standalone"
