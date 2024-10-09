@@ -126,8 +126,8 @@ O **docker-compose.yml** define os serviços necessários para o ambiente de exe
 version: '3'
 
 services:
-  sleek-airflow:
-    image: workspace:v001
+  project-airflow:
+    image: sparkflow:latest
     environment:
       - AIRFLOW__CORE__FERNET_KEY=sua-chave-fernet-aqui
       - AIRFLOW__CORE__LOAD_EXAMPLES=False
