@@ -11,6 +11,8 @@ services:
 
     volumes:
       - ./airflow:/opt/airflow  
+      - ./airflow/dags:/opt/airflow/dags  
+      - ./breweries:/opt/airflow/dags/breweries
       - ./bronze:/bronze
       - ./silver:/silver
       - ./gold:/gold

@@ -8,8 +8,6 @@ RUN apt-get update --allow-releaseinfo-change && \
 
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 
-RUN mkdir -p /bronze /silver /gold
-
 USER airflow
 
 RUN pip install apache-airflow apache-airflow-providers-apache-spark pyspark
