@@ -9,9 +9,8 @@ def silver_to_gold(input_path, output_path, **args):
     df = util.load_parquet(input_path)
     # df = spark.read.parquet(input_path)
 
-    df = df.groupBy(['state_province', 'brewery_type']).agg(F.count('id')).sort(['state_province', 'brewery_type'])
+    df = df.groupBy(['state_province', 'brewery_type']).agg(F.count('id').alias('count_per_type_location')).sort(['brewery_type', 'state_province'])
 
     df.show()
     util.save(df, output_path)
-    # df.write.mode("overwrite").partitionBy('state_province').parquet(output_path)
 
