@@ -11,6 +11,7 @@ sys.path.insert(1, "opt/airflow/dags/")
 from breweries.tasks import extract
 from breweries.tasks import bronze_to_silver
 from breweries.tasks import silver_to_gold
+from breweries.tasks import data_quality
 
 default_args = {
     "owner": "data_eng_team",

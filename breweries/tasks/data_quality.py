@@ -8,7 +8,7 @@ def data_quality(input_path, output_path, **args):
     print('printando input', input_path)
     df = util.load_parquet(input_path)
 
-    (df
+    df = (df
     .withColumn('missing_address', F.when(F.col('address_1').isNull(), True).otherwise(False))
     .withColumn('missing_phone', F.when(F.col('phone').isNull(), True).otherwise(False))
     .withColumn('missing_website_url', F.when(F.col('website_url').isNull(), True).otherwise(False))
@@ -17,4 +17,6 @@ def data_quality(input_path, output_path, **args):
     .filter((F.col('missing_address')==True) | (F.col('missing_phone')==True) | (F.col('missing_website_url')==True))
     )
 
+    df.show()
+    
     util.save(df, output_path)
