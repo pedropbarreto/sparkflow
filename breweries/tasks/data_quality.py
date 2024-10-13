@@ -2,7 +2,7 @@ from pyspark.sql import functions as F
 from breweries.utils.utils import Util
 from pyspark.sql import SparkSession
 
-def dadata_quality(input_path, output_path, **args):
+def data_quality(input_path, output_path, **args):
     util = Util()
 
     print('printando input', input_path)
