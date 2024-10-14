@@ -64,7 +64,7 @@ data_quality = PythonOperator(
     task_id='data_quality',
     python_callable=data_quality.data_quality,
     op_kwargs={
-        "input_path": 'gold/breweries',
+        "input_path": 'silver/breweries',
         "output_path": 'gold/data_quality',
     },
     dag=dag
