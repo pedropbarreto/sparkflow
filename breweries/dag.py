@@ -21,7 +21,7 @@ default_args = {
 
 dag = DAG(
     dag_id= 'BREWERIES_PIPELINE',
-    schedule_interval='0 4 * * *',
+    schedule_interval='0 6 * * *',
     catchup=False,
     default_args = default_args
 )
@@ -35,7 +35,7 @@ extraction_task = PythonOperator(
     task_id='extraction_task',
     python_callable=extract.extraction_task,
     op_kwargs={
-        "output_path": 'bronze/breweries'
+        "output_json": 'bronze/json'
     },
     dag=dag
 )
@@ -44,7 +44,7 @@ bronze_to_silver = PythonOperator(
     task_id='bronze_to_silver',
     python_callable=bronze_to_silver.bronze_to_silver,
     op_kwargs={
-        "input_path": 'bronze/breweries',
+        "input_json": 'bronze/json',
         "output_path": 'silver/breweries'
     },
     dag=dag
