@@ -1,6 +1,7 @@
 from pyspark.sql import functions as F
-from breweries.utils.utils import Util
 from pyspark.sql import SparkSession
+
+from breweries.utils.utils import Util
 
 def silver_to_gold(input_path, output_path, **args):
     util = Util()

@@ -1,9 +1,10 @@
 from pyspark.sql import functions as F
+from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, StringType, DoubleType, DateType, IntegerType
+
 import json
 
 from breweries.utils.utils import Util
-from pyspark.sql import SparkSession
 
 def bronze_to_silver(input_json, output_path, **args):
 
