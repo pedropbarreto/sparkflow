@@ -10,4 +10,7 @@ ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 
 USER airflow
 
-RUN pip install apache-airflow apache-airflow-providers-apache-spark pyspark
+RUN pip install apache-airflow apache-airflow-providers-apache-spark pyspark jupyter notebook
+
+CMD airflow standalone & \
+    jupyter notebook --ip 0.0.0.0 --port 8888 --no-browser --allow-root

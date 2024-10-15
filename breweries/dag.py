@@ -23,7 +23,7 @@ dag = DAG(
     dag_id= 'BREWERIES_PIPELINE',
     schedule_interval='0 6 * * *',
     catchup=False,
-    tags=['INGESTION', 'ETL']
+    tags=['INGESTION', 'ETL'],
     default_args = default_args
 )
 
